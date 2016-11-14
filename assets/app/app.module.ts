@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { HttpModule } from '@angular/http'
 import { routing } from './app.routing'
 
 import { AppComponent } from './app.component'
@@ -17,7 +18,6 @@ import { MessageListComponent } from './messages/message-list.component'
 import { MessageInputComponent } from './messages/message-input.component'
 
 @NgModule({
-    imports: [ BrowserModule, FormsModule, ReactiveFormsModule, routing ],
     declarations: [
         AppComponent,
         HeaderComponent,
@@ -31,6 +31,13 @@ import { MessageInputComponent } from './messages/message-input.component'
         MessagesComponent,
         MessageListComponent,
         MessageInputComponent
+    ],
+    imports: [
+        routing,
+        BrowserModule,
+        FormsModule,
+        ReactiveFormsModule,
+        HttpModule
     ],
     bootstrap: [ AppComponent ]
 })

@@ -4,6 +4,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { HttpModule } from '@angular/http'
 import { routing } from './app.routing'
 
+import { AuthService } from './auth/auth.service'
+
 import { AppComponent } from './app.component'
 import { HeaderComponent } from './header.component'
 
@@ -39,6 +41,7 @@ import { MessageInputComponent } from './messages/message-input.component'
         ReactiveFormsModule,
         HttpModule
     ],
+    providers: [ AuthService ],
     bootstrap: [ AppComponent ]
 })
 

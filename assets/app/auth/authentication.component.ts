@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 
 @Component({
-    selector: 'my-auth',
+    selector: 'app-authentication',
     template: `
         <header class="row spacing">
             <nav class="col-md-8 col-md-offset-2">
@@ -13,9 +13,10 @@ import { Component } from "@angular/core";
             </nav>
         </header>
         <div class="row spacing">
-            <router-outlet></router-outlet>
+           <router-outlet></router-outlet>
         </div>
     `
 })
+export class AuthenticationComponent {
 
-export class AuthenticationComponent { }
+}

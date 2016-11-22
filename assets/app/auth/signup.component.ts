@@ -1,16 +1,15 @@
-import { Component, OnInit } from '@angular/core'
-import { FormGroup, FormControl, Validators } from '@angular/forms'
+import { Component, OnInit } from "@angular/core";
+import { FormGroup, FormControl, Validators } from "@angular/forms";
 
 import { AuthService } from './auth.service'
 import { User } from './user.model'
 
 @Component({
-    selector: 'signup',
-    templateUrl: './signup.html'
+    selector: 'app-signup',
+    templateUrl: './signup.component.html'
 })
-
 export class SignupComponent implements OnInit {
-    myForm: FormGroup
+    myForm: FormGroup;
 
     constructor(private authService: AuthService){}
 
@@ -29,7 +28,7 @@ export class SignupComponent implements OnInit {
         this.myForm.reset()
     }
 
-    ngOnInit(){
+    ngOnInit() {
         this.myForm = new FormGroup({
             firstName: new FormControl(null, Validators.required),
             lastName: new FormControl(null, Validators.required),
@@ -38,6 +37,6 @@ export class SignupComponent implements OnInit {
                 Validators.pattern("[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?")
             ]),
             password: new FormControl(null, Validators.required)
-        })
+        });
     }
 }
